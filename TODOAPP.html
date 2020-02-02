@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	TODOAPP
+</head>
+<BODY>
+	<input type="text" id="todo">
+	<button onclick="addTodo()">ADD</button>
+	<p id="demo"></p>
+</BODY>
+	<script type="text/javascript">
+		
+			var todoArray=JSON.parse(localStorage.getItem('user_todo'))?
+			JSON.parse(localStorage.getItem('user_todo')):[];
+			window.onload=function(){
+				getTodo();
+			}
+			function addTodo(){
+				var todo=document.getElementById('todo').value;
+				todoArray.push(todo);
+				getTodo();
+			}
+			function getTodo(){
+				var todolist='';
+				todoArray.forEach(function(value){
+				todolist=todolist+'<div class="todoItem" style="background-color:red">'
+				});
+				localStorage.setItem('user_todo',JSON.stringify(todoArry));
+				document.getElementById('todolist').innerHTML=todolist;
+				document.getElementById('todo').value='';
+			}
+		
+	</script>
+	</html>
